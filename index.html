@@ -21,30 +21,6 @@
 
       <button>Play/Pause</button>
     </main>
-    <script>
-        const video = document.querySelector('video');
-        const button = document.querySelector('button');
-
-        class MediaPlayer {
-            constructor(player) {
-                this.video = player.video;
-            }
-            play() {
-                this.video.play();
-            }
-            pause() {
-                this.video.pause();
-            }
-            togglePlay(){
-                if(this.video.paused){
-                    this.video.play()
-                }else{
-                    this.video.pause()
-                }
-            }
-        }
-        const player = new MediaPlayer({video});
-        button.onclick = () => player.togglePlay();
-    </script>
+    <script type="module" src="/assets/index.js"></script>
   </body>
 </html>
