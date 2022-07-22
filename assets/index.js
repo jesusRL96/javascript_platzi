@@ -41,6 +41,6 @@ function Persona(name) {
 }
 Persona.prototype.saludar = function() {console.log(`hola soy ${this.name}`)};
 const juan = new Persona('juan obj');
-const pepe = new Persona('pepe obj');
-juan.saludar();
-pepe.saludar();
+console.log('hasOwnProperty',juan.hasOwnProperty('name'), juan.name);
+console.log('hasOwnProperty',juan.hasOwnProperty('saludar'), juan.saludar);
+console.log('hasOwnProperty',juan.hasOwnProperty('toString'), juan.toString);
