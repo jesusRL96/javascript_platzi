@@ -30,3 +30,17 @@ const buttons = document.getElementsByClassName('boton-call');
 Array.prototype.forEach.call(buttons, (button,index) => {
     button.onclick = (button) => alert('call: '+index);
 });
+
+// Prototype
+function Persona(name) {
+    // const persona = Object.create(Persona.prototype)
+    // persona.name = name;
+    // persona.saludar = function() {console.log(`hola soy ${this.name}`)};
+    // return persona;
+    this.name = name
+}
+Persona.prototype.saludar = function() {console.log(`hola soy ${this.name}`)};
+const juan = new Persona('juan obj');
+const pepe = new Persona('pepe obj');
+juan.saludar();
+pepe.saludar();
