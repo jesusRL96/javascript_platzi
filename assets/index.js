@@ -44,3 +44,45 @@ const juan = new Persona('juan obj');
 console.log('hasOwnProperty',juan.hasOwnProperty('name'), juan.name);
 console.log('hasOwnProperty',juan.hasOwnProperty('saludar'), juan.saludar);
 console.log('hasOwnProperty',juan.hasOwnProperty('toString'), juan.toString);
+// https://esprima.org/
+// https://astexplorer.net/
+
+// Generadores
+function* gen() {
+    yield 1;
+    yield 2;
+    yield 3;
+  }
+
+// var g = gen(); // "Generator { }"
+
+function* idMakerWithReset() {
+    let id = 1
+    let reset
+    while(true) {
+        reset = yield id
+        if (reset) {
+        id = 1
+        } else {
+        id += 1
+        }
+    }
+}
+
+// const idMR = idMakerWithReset()
+// idMR.next() //f.next(true)
+
+function* fibo() {
+    let s1 = 0
+    let s2 = 1
+    let nextNumber = 1
+    while(true) {
+      yield nextNumber
+      nextNumber = s1 + s2
+      s1 = s2
+      s2 = nextNumber
+    }
+  }
+
+// const f = fibo()
+// f.next()
