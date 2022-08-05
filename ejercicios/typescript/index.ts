@@ -12,7 +12,7 @@ let nombre: string = 'Jesus';
 // arrays
 let people: string[] = [];
 people = ["Isabel", "Nicole", "Pepe"]
-people.push(1);
+// people.push(1);
 
 let strAndNbum: Array<string | number> = [];
 strAndNbum.push('Juan');
