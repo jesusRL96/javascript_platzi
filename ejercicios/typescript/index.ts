@@ -47,3 +47,24 @@ function fullName(firstName: string, lastName?: string, age: number = 0): string
 const yo = fullName('jesus', 'rl', 20);
 const def = fullName('pepe');
 console.log(yo);
+
+interface Rectangulo {
+    ancho: number
+    alto: number
+    color?: Color
+}
+
+let rectangulo: Rectangulo = {
+    ancho: 20,
+    alto: 20,
+    // color: Color.Rojo
+};
+
+function area(r: Rectangulo): number {
+    return r.ancho * r.alto;
+}
+
+console.log(area(rectangulo));
+
+rectangulo.toString = function() {return `Un rectangulo de color ${this.color||'indefinido'}`};
+console.log(rectangulo.toString());
