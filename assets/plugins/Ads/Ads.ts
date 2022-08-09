@@ -80,31 +80,31 @@ const ALL_ADS: Ad[] = [
     },
 ];
 
-
 class Ads {
-    private static instance: Ads
-    private ads: Ad[]
+    private static instance: Ads;
+    private ads: Ad[];
 
     private constructor() {
         this.initAds();
     }
 
-    static getInstance(): Ads {
+    static getInstance() {
         if (!Ads.instance) {
             Ads.instance = new Ads();
         }
+
         return Ads.instance;
     }
 
-    private initAds(): void {
+    private initAds() {
         this.ads = [...ALL_ADS];
-
     }
 
     getAd() {
         if (this.ads.length === 0) {
             this.initAds();
         }
+
         return this.ads.pop();
     }
 }
